@@ -28,12 +28,17 @@
     <body>
         <h1>Feedback form</h1>
     <form>
+      <!-- Indicate accessibility by labeling with the for attribute and aria-required -->
         <div class="control">
-          <label>Full name <span class="required">*</span></label><input id="name" name="name" type="text" />
+          <label for="name">Full name <span class="required">*</span></label><input id="name" name="name" type="text" aria-required="true" required aria-describedly="nameHelp" />
+          <small id="nameHelp">Please enter your full name.</small>
         </div>
+ <!-- Linked textarea for instructions with label and aria-describedby -->
+        <!-- Linked textarea for instructions with label and aria-describedby -->
         <div class="control">
-          <label>Biography</label><textarea id="biography" name="biography" type="text"></textarea>
-          <span>Include examples on your skills in JavaScript.</span>
+          <label for="biography">Biography</label>
+          <textarea id="biography" name="biography" aria-describedby="bioHelp"></textarea>
+          <small id="bioHelp">Include examples on your skills in JavaScript.</small>
         </div>
         
           <div>Gender</div>
