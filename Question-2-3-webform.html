@@ -33,29 +33,37 @@
           <label for="name">Full name <span class="required">*</span></label><input id="name" name="name" type="text" aria-required="true" required aria-describedly="nameHelp" />
           <small id="nameHelp">Please enter your full name.</small>
         </div>
- <!-- Linked textarea for instructions with label and aria-describedby -->
+ 
         <!-- Linked textarea for instructions with label and aria-describedby -->
         <div class="control">
           <label for="biography">Biography</label>
           <textarea id="biography" name="biography" aria-describedby="bioHelp"></textarea>
           <small id="bioHelp">Include examples on your skills in JavaScript.</small>
         </div>
+        <!-- Labeled a fieldset with gender radio buttons -->
+          <<fieldset>
+            <legend>Gender</legend>
+            <div class="control">
+                <input id="gender_male" name="gender" type="radio" value="male" />
+                <label for="gender_male">Male</label>
+            </div>
+            <div class="control">
+                <input id="gender_female" name="gender" type="radio" value="female" />
+                <label for="gender_female">Female</label>
+            </div>
+        </fieldset>
         
-          <div>Gender</div>
-          <div class="control">
-            <input id="gender_male" name="gender" type="radio" value="male" /><label>Male</label>
-          </div>
-          <div class="control">
-            <input id="gender_female" name="gender" type="radio" value="female" /><label>Female</label>
-          </div>
-        
-        <div class="control">
-          <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" /><label>I accept the terms and conditions</label>
+        <!-- Labeled checkbox connected to the for attribute -->
+        div class="control">
+            <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" aria-required="true" required />
+            <label for="accept_agbs">I accept the terms and conditions <span class="required">*</span></label>
         </div>
-        <div class="control">
-          <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
-        </div>
-      </form>
+<!-- Click "Submit" -->
+<div class="control">
+  <input name="validate" type="hidden" value="1" />
+  <input type="submit" value="Register" />
+</div>
+</form>
       
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
           <script>"use strict";
@@ -63,10 +71,12 @@
       ;
       (function () {
         var validateInput;
-      
-        $.urlParam = function (name) {
-          var results;
-          results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
+
+      // Function to get values for query parameters
+      $.urlParam = function (name) {
+                var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
+                return results ? decodeURI(results[1]) : null;
+            };
       
           if (results === null) {
             return null;
