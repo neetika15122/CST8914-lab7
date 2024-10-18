@@ -41,7 +41,7 @@
           <small id="bioHelp">Include examples on your skills in JavaScript.</small>
         </div>
         <!-- Labeled a fieldset with gender radio buttons -->
-          <<fieldset>
+          <fieldset>
             <legend>Gender</legend>
             <div class="control">
                 <input id="gender_male" name="gender" type="radio" value="male" />
@@ -54,7 +54,8 @@
         </fieldset>
         
         <!-- Labeled checkbox connected to the for attribute -->
-        div class="control">
+    </form>
+    div class="control">
             <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" aria-required="true" required />
             <label for="accept_agbs">I accept the terms and conditions <span class="required">*</span></label>
         </div>
@@ -77,7 +78,8 @@
                 var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
                 return results ? decodeURI(results[1]) : null;
             };
-      
+     
+          
           if (results === null) {
             return null;
           } else {
