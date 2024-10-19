@@ -6,10 +6,10 @@
   <title>The funion</title>
   <style>
     *,
-*::after,
+ *::after,
 *::before {
   box-sizing: border-box;
-}
+} 
 
 html {
   position: relative;
@@ -24,11 +24,7 @@ body {
 a{
   color: #006b3a;
 }
-  /*1.Focus on interactive element*/ 
-main a {
-  outline: 2px solid #006b3a; /* Custom focus indicator */
-}
-h2 {
+  h2 {
   margin-top: 0;
 }
 
@@ -240,7 +236,7 @@ article p {
       <div class="column">
         <div class="tier-header">
           <h2>In the news</h2>
-          <p><a href="#"><b>Read More</b></a></p> 
+          <!-- <p><a href="#"><b>Read More</b></a></p>  -->
         </div>
         <article>
           <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
@@ -297,7 +293,7 @@ article p {
     <div class="container">
       <h3>Like the Funion? Consider joining our newsletter!</h3>
       <input type="text" aria-label="Email Address" placeholder="Enter your email">
-      <button type="button" style="outline: 2px solid #006b3a;" onfocus="getFocus()" aria-label = "Sign up button">Sign up</button>
+      <button type="button" style="outline: 2px solid #6b6900;" onclick="getFocus()" aria-label = "Sign up button">Sign up</button>
 
   </footer>
   
