@@ -75,7 +75,6 @@
       (function () {
         var validateInput;
 
-      // Function to get values for query parameters
       $.urlParam = function (name) {
                 var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
                 return results ? decodeURI(results[1]) : null;
